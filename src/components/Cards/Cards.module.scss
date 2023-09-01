@@ -1,0 +1,17 @@
+.Cards {
+    width: 263px;
+    height: 716px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    overflow-y: scroll;
+}
+.cardContainer{
+    display: flex;
+padding: 4px;
+flex-direction: column;
+align-items: center;
+border-radius: 7px;
+background: #F4F8FF;
+}

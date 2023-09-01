@@ -1,0 +1,42 @@
+.InfoBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 263px;
+    padding: 0 4px;
+    align-items: center;
+
+    h1 {
+        color: #50B810;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 140%;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+
+        button {
+            width: 24px;
+            height: 24px;
+            font-size: 12px;
+            background-color: #EBEEF6;
+            color: #3D8FEC;
+            padding: 0;
+            margin: 0;
+            appearance: none;
+        }
+
+        p {
+            padding: 1px 6px 2px 6px;
+            font-size: 12px;
+            border-radius: 4px;
+            border: 1px solid var(--primary-gray-primary, #7B8AAB);
+        }
+    }
+
+}
