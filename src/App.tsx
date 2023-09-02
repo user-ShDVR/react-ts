@@ -8,20 +8,35 @@ const baseURL = "https://jsonplaceholder.typicode.com/todos";
 
 
 function App() {
-    const [cards, setCards] = useState<ICard[] | null>(null);
+    const [cards, setCards] = useState<ICard[]>([]);
+    const [isLoading, setIsLoading] = useState<boolean>(true);
+
     useEffect(() => {
-        axios.get(baseURL)
-            .then((response) => {
-                setCards(response.data);
-            })
+      setIsLoading(true)
+      axios.get(baseURL)
+      .then(response => {
+        setCards(response.data)
+        setIsLoading(false)
+      })
+      .catch(error=> {
+        console.log('Error', error.message);
+      })
     }, [])
-    if (!cards) return null;
-    return (
-        <div className="App">
+
+    if (!isLoading) {
+        return (
+            <div className="App">
             <InfoBar cardsValue={cards.length} />
             <Cards cards={cards} />
         </div>
-    );
+        );
+      } else {
+        return (
+            <div className="App">
+            Loading<div className="lds-ring"><div></div><div></div><div></div><div></div></div>
+            </div>
+        )
+      }
 }
 
 export default App;

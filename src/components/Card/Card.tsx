@@ -28,24 +28,23 @@ export const Card: FC<ICard> = (props) => {
     }
     return (
         <div className={cls.Card}>
-                <h1 className={cls.ellipsisHeader} >
-                    <input type="checkbox" checked={checked} onChange={chengeCheckbox} /> 
-                    <span className={cls.ellipsisTitle}>
+                    <label className={cls.Card__title}>
+                    <input className={cls.Card__check} type="checkbox" checked={checked} onChange={chengeCheckbox}/>
+                    <span className={cls.Card__check}></span>
                     {title}
-                    </span> 
-                </h1>
-            <div className={cls.dateContainer}>
-                <p>{formatDate(startDate)}</p>
-                <p>{formatDate(endDate)}</p>
+                </label>
+            <div className={cls.Card__dates}>
+                <p className={cls.Card__date}>{formatDate(startDate)}</p>
+                <p className={cls.Card__date}>{formatDate(endDate)}</p>
             </div>
-            <p className={cls.ellipsisText}>{description}</p>
-            <div className={cls.footer}>
-                <div className={cls.tags}>
-                    <span className={cls.tag1}>Entity title</span> 
-                    <span className={cls.tag2}>Front-end</span> 
+            <p className={cls.Card__description}>{description}</p>
+            <div className={cls.Card__footer}>
+                    <ul className={cls.Card__tags}>
+                        <li className={cls.Card__tag}>{faker.lorem.word()}</li>
+                        <li className={cls.Card__tag}>{faker.lorem.word()}</li>
+                    </ul>
+                    <img src={Avatar} alt="avatar" className={cls.Card__avatar}/>
                 </div>
-                <img src={Avatar} alt="Avatar" />
-            </div>
         </div>
     )
 }
